@@ -1,0 +1,16 @@
+repository_type: pipeline
+
+nf_core_version: 3.2.0
+
+lint: {}
+
+template:
+  org: nf-core
+  name: rsvpipeline
+  description: Viral RSV analysis pipeline using Illumina or Oxford Nanopore Technologies
+    amplicon-based sequencing data.
+  author: "Adri\xE1n Mu\xF1oz-Barrera"
+  version: 1.0.0dev
+  force: true
+  outdir: .
+  is_nfcore: true
