@@ -75,54 +75,56 @@ The RSV repository contains genomic data, analysis scripts, and additional resou
 > If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/usage/installation) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline) with `-profile test` before running the workflow on actual data.
 
 1. Install [`Nextflow`](https://www.nextflow.io/docs/latest/getstarted.html#installation) (`>=24.04.2`) before running the pipeline.
+
 2. Make sure to download and set up the **Kraken2 PlusPF database** from this [`repository`](https://benlangmead.github.io/aws-indexes/k2). Ensure that the database path is correctly set in the `nextflow.config` file.
+
 3. Clone the repository:
 
-```bash
-git clone https://github.com/genomicsITER/nf-rsvpipeline
-cd nf-rsvpipeline
-```
+   ```bash
+   git clone https://github.com/genomicsITER/nf-rsvpipeline
+   cd nf-rsvpipeline
+   ```
 
 4. Input Data Requirements: To run the pipeline, the user must provide sequencing data in the following format:
 
-* **For Illumina data**: A folder containing paired-end FASTQ files (`_R1.fastq.gz` and `_R2.fastq.gz` for each sample).
-* **For ONT data**: A folder containing single-end FASTQ files (`.fastq.gz`).
+   * **For Illumina data**: A folder containing paired-end FASTQ files (`_R1.fastq.gz` and `_R2.fastq.gz` for each sample).
+   * **For ONT data**: A folder containing single-end FASTQ files (`.fastq.gz`).
 
 5. Run the pipeline:
 
-For Illumina **paired-end** datasets run the pipeline as follows:
+   For Illumina **paired-end** datasets run the pipeline as follows:
 
-```bash
-nextflow run main.nf \
-  --indir /path/to/fastq_dir/illumina \
-  --outdir results_illumina \
-  --platform "illumina" \
-  -profile <docker/singularity/conda> \
-  -resume
-```
+   ```bash
+   nextflow run main.nf \
+     --indir /path/to/fastq_dir/illumina \
+     --outdir results_illumina \
+     --platform "illumina" \
+     -profile <docker/singularity/conda> \
+     -resume
+   ```
 
-For ONT datasets run the pipeline as follows:
+   For ONT datasets run the pipeline as follows:
 
-```bash
-nextflow run main.nf \
-  --indir /path/to/fastq_dir/nanopore \
-  --outdir results_nanopore \
-  --platform "nanopore" \
-  -profile <docker/singularity/conda> \
-  -resume
-```
+   ```bash
+   nextflow run main.nf \
+     --indir /path/to/fastq_dir/nanopore \
+     --outdir results_nanopore \
+     --platform "nanopore" \
+     -profile <docker/singularity/conda> \
+     -resume
+   ```
 
-Additionaly, if you want to run [`pycoQC`](https://github.com/a-slide/pycoQC), you need to add the `--sequencing_summary` parameter:
+   Additionaly, if you want to run [`pycoQC`](https://github.com/a-slide/pycoQC), you need to add the `--sequencing_summary` parameter:
 
-```bash
-nextflow run main.nf \
-  --indir /path/to/nanopore/fastq/files \
-  --outdir results_nanopore \
-  --platform "nanopore" \
-  --sequencing_summary sequencing_summary.txt \
-  -profile <docker/singularity/conda> \
-  -resume
-```
+   ```bash
+   nextflow run main.nf \
+     --indir /path/to/nanopore/fastq/files \
+     --outdir results_nanopore \
+     --platform "nanopore" \
+     --sequencing_summary sequencing_summary.txt \
+     -profile <docker/singularity/conda> \
+     -resume
+   ```
 
 For further assistance, feel free to open an [issue](https://github.com/genomicsITER/nf-rsvpipeline/issues) in this repository.
 
