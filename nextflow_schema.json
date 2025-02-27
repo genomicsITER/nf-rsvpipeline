@@ -10,24 +10,25 @@
             "type": "object",
             "fa_icon": "fas fa-terminal",
             "description": "Define where the pipeline should find input data and save output data.",
-            "required": ["input", "outdir"],
+            "required": ["indir", "outdir"],
             "properties": {
-                "input": {
+                "indir": {
                     "type": "string",
-                    "format": "file-path",
-                    "exists": true,
-                    "schema": "assets/schema_input.json",
-                    "mimetype": "text/csv",
-                    "pattern": "^\\S+\\.csv$",
-                    "description": "Path to comma-separated file containing information about the samples in the experiment.",
-                    "help_text": "You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row. See [usage docs](https://nf-co.re/rsvpipeline/usage#samplesheet-input).",
-                    "fa_icon": "fas fa-file-csv"
+                    "format": "directory-path",
+                    "description": "The input directory where the FASTQs are available. You have to use absolute paths to storage on Cloud infrastructure.",
+                    "fa_icon": "fas fa-folder-open"
                 },
                 "outdir": {
                     "type": "string",
                     "format": "directory-path",
                     "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
                     "fa_icon": "fas fa-folder-open"
+                },
+                "platform": {
+                    "type": "string",
+                    "fa_icon": "fas fa-hdd",
+                    "description": "NGS platform used to sequence the samples.",
+                    "enum": ["illumina", "nanopore"]
                 },
                 "email": {
                     "type": "string",

@@ -1,13 +1,14 @@
 #!/usr/bin/env nextflow
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    nf-core/rsvpipeline
+    genomicsITER/rsvpipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Github : https://github.com/nf-core/rsvpipeline
-    Website: https://nf-co.re/rsvpipeline
-    Slack  : https://nfcore.slack.com/channels/rsvpipeline
+    Github : https://github.com/genomicsITER/rsvpipeline
+    Website: https://www.iter.es/
 ----------------------------------------------------------------------------------------
 */
+
+nextflow.enable.dsl = 2
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -15,7 +16,8 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { RSVPIPELINE  } from './workflows/rsvpipeline'
+include { RSV_ILLUMINA_PIPELINE   } from './workflows/rsv_illumina_pipeline'
+include { RSV_NANOPORE_PIPELINE   } from './workflows/rsv_nanopore_pipeline'
 include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_rsvpipeline_pipeline'
 include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_rsvpipeline_pipeline'
 include { getGenomeAttribute      } from './subworkflows/local/utils_nfcore_rsvpipeline_pipeline'
@@ -26,11 +28,6 @@ include { getGenomeAttribute      } from './subworkflows/local/utils_nfcore_rsvp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-// TODO nf-core: Remove this line if you don't need a FASTA file
-//   This is an example of how to use getGenomeAttribute() to fetch parameters
-//   from igenomes.config using `--genome`
-params.fasta = getGenomeAttribute('fasta')
-
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     NAMED WORKFLOWS FOR PIPELINE
@@ -38,24 +35,22 @@ params.fasta = getGenomeAttribute('fasta')
 */
 
 //
-// WORKFLOW: Run main analysis pipeline depending on type of input
+// WORKFLOW: Run main analysis pipeline depending on type of platform
 //
-workflow NFCORE_RSVPIPELINE {
+workflow RSVPIPELINE {
 
-    take:
-    samplesheet // channel: samplesheet read in from --input
+    if (params.platform == 'illumina') {
 
-    main:
+        // WORKFLOW: Pipeline for Illumina data
+        RSV_ILLUMINA_PIPELINE ()
 
-    //
-    // WORKFLOW: Run pipeline
-    //
-    RSVPIPELINE (
-        samplesheet
-    )
-    emit:
-    multiqc_report = RSVPIPELINE.out.multiqc_report // channel: /path/to/multiqc_report.html
+    } else if (params.platform == 'nanopore') {
+
+        // WORKFLOW: Pipeline for Oxford Nanopore Technologies data
+        RSV_NANOPORE_PIPELINE ()
+    }
 }
+
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     RUN MAIN WORKFLOW
@@ -65,36 +60,12 @@ workflow NFCORE_RSVPIPELINE {
 workflow {
 
     main:
-    //
-    // SUBWORKFLOW: Run initialisation tasks
-    //
-    PIPELINE_INITIALISATION (
-        params.version,
-        params.validate_params,
-        params.monochrome_logs,
-        args,
-        params.outdir,
-        params.input
-    )
 
     //
     // WORKFLOW: Run main workflow
     //
-    NFCORE_RSVPIPELINE (
-        PIPELINE_INITIALISATION.out.samplesheet
-    )
-    //
-    // SUBWORKFLOW: Run completion tasks
-    //
-    PIPELINE_COMPLETION (
-        params.email,
-        params.email_on_fail,
-        params.plaintext_email,
-        params.outdir,
-        params.monochrome_logs,
-        params.hook_url,
-        NFCORE_RSVPIPELINE.out.multiqc_report
-    )
+    RSVPIPELINE ()
+
 }
 
 /*
