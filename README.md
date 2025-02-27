@@ -13,7 +13,7 @@ A public repository of **Respiratory Syncytial Virus genomic surveillance** bioi
 
 ## Introduction
 
-**RSVPipeline** automates the processing of Illumina and Oxford Nanopore Technologies (ONT) sequencing datasets for viral genome analysis. It integrates multiple tools for quality control, taxonomic classification, reference selection, alignment, consensus generation, and variant calling.
+**\_RSVPipeline\_** automates the processing of Illumina and Oxford Nanopore Technologies (ONT) **amplicon-based** sequencing datasets for viral genome analysis. It integrates multiple tools for quality control, taxonomic classification, reference selection, alignment, consensus generation, and variant calling.
 
 The **RSVPipeline** is built using [Nextflow](https://www.nextflow.io/), following [nf-core](https://nf-co.re) guidelines and templates.
 
