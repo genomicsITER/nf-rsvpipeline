@@ -32,7 +32,7 @@ The **RSVPipeline** is built using [Nextflow](https://www.nextflow.io/), followi
 4. Quality control of trimmed reads with FastQC
 5. Remove host reads using Kraken2 with humanDB database
 6. Multi-reference alignment with bbmap to select reference
-6.1 Run alternative assembly strategy if previous MSA step failed
+  6.1. Run alternative assembly strategy if previous MSA step failed
 7. Align reads to the correct reference strain
 8. Trim adapters with iVar before create consensus sequences
 9. Coverage analysis with Mosdepth
