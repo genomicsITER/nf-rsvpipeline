@@ -13,7 +13,7 @@ A public repository of **Respiratory Syncytial Virus genomic surveillance** bioi
 
 ## Introduction
 
-**\_RSVPipeline\_** automates the processing of Illumina and Oxford Nanopore Technologies (ONT) **amplicon-based** sequencing datasets for viral genome analysis. It integrates multiple tools for quality control, taxonomic classification, reference selection, alignment, consensus generation, and variant calling.
+**RSVPipeline** automates the processing of Illumina and Oxford Nanopore Technologies (ONT) **amplicon-based** sequencing datasets for viral genome analysis. It integrates multiple tools for quality control, taxonomic classification, reference selection, alignment, consensus generation, and variant calling.
 
 The **RSVPipeline** is built using [Nextflow](https://www.nextflow.io/), following [nf-core](https://nf-co.re) guidelines and templates.
 
@@ -63,14 +63,17 @@ The **RSVPipeline** is built using [Nextflow](https://www.nextflow.io/), followi
 9. Create consensus sequence ([`Medaka`](https://github.com/nanoporetech/medaka))
 10. Variant-calling ([`Medaka`](https://github.com/nanoporetech/medaka))
 
-## Usage
+## Prerequisites
+
+* **Nextflow:** Before running the pipeline, ensure that [`Nextflow`](https://www.nextflow.io/docs/latest/getstarted.html#installation) is installed and properly configured.
+* **Kraken2 Database Requirement:** The pipeline requires the Kraken2 PlusPF database for taxonomic classification. Before running the pipeline, make sure to download and set up the database from this [`repository`](https://benlangmead.github.io/aws-indexes/k2). Ensure that the database path is correctly set in the `nextflow.config` file.
 
 > [!NOTE]
 > If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/usage/installation) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline) with `-profile test` before running the workflow on actual data.
 
+## Usage
 
-
-
+...
 
 ## How to cite this work
 
