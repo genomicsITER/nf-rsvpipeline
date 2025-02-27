@@ -1,4 +1,4 @@
-# RSV-Pipeline
+# nf-rsvpipeline
 
 [![Nextflow](https://img.shields.io/badge/nextflow%20DSL2-%E2%89%A524.04.2-23aa62.svg)](https://www.nextflow.io/)
 [![nf-core](https://img.shields.io/badge/build_using-nf--core-1a9655)](https://nf-co.re/)
@@ -13,9 +13,9 @@ A public repository of **Respiratory Syncytial Virus genomic surveillance** bioi
 
 ## Introduction
 
-**RSVPipeline** automates the processing of Illumina and Oxford Nanopore Technologies (ONT) **amplicon-based** sequencing datasets for viral genome analysis. It integrates multiple tools for quality control, taxonomic classification, reference selection, alignment, consensus generation, and variant calling.
+**nf-rsvpipeline** automates the processing of Illumina and Oxford Nanopore Technologies (ONT) **amplicon-based** sequencing datasets for viral genome analysis. It integrates multiple tools for quality control, taxonomic classification, reference selection, alignment, consensus generation, and variant calling.
 
-The **RSVPipeline** is built using [Nextflow](https://www.nextflow.io/), following [nf-core](https://nf-co.re) guidelines and templates.
+The **nf-rsvpipeline** is built using [Nextflow](https://www.nextflow.io/), following [nf-core](https://nf-co.re) guidelines and templates.
 
 ## Illumina pipeline summary
 
@@ -63,23 +63,61 @@ The **RSVPipeline** is built using [Nextflow](https://www.nextflow.io/), followi
 9. Create consensus sequence ([`Medaka`](https://github.com/nanoporetech/medaka))
 10. Variant-calling ([`Medaka`](https://github.com/nanoporetech/medaka))
 
-## Prerequisites
-
-* **Nextflow:** Before running the pipeline, ensure that [`Nextflow`](https://www.nextflow.io/docs/latest/getstarted.html#installation) is installed and properly configured.
-* **Kraken2 Database Requirement:** The pipeline requires the Kraken2 PlusPF database for taxonomic classification. Before running the pipeline, make sure to download and set up the database from this [`repository`](https://benlangmead.github.io/aws-indexes/k2). Ensure that the database path is correctly set in the `nextflow.config` file.
+## Quick start
 
 > [!NOTE]
 > If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/usage/installation) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline) with `-profile test` before running the workflow on actual data.
 
-## Usage
+1. Install [`Nextflow`](https://www.nextflow.io/docs/latest/getstarted.html#installation) (`>=22.10.1`) before running the pipeline.
+2. Make sure to download and set up the **Kraken2 PlusPF database** from this [`repository`](https://benlangmead.github.io/aws-indexes/k2). Ensure that the database path is correctly set in the `nextflow.config` file.
+3. Clone the repository:
 
-...
+```bash
+git clone https://github.com/genomicsITER/nf-rsvpipeline
+cd nf-rsvpipeline
+```
+
+4. Run the pipeline:
+
+For Illumina **paired-end** datasets run the pipeline as follows:
+
+```bash
+nextflow run main.nf \
+  --indir /path/to/illumina/fastq/files \
+  --outdir results_illumina \
+  --platform "illumina" \
+  -profile <docker/singularity/conda> \
+  -resume
+```
+
+For ONT datasets run the pipeline as follows:
+
+```bash
+nextflow run main.nf \
+  --indir /path/to/nanopore/fastq/files \
+  --outdir results_nanopore \
+  --platform "nanopore" \
+  -profile <docker/singularity/conda> \
+  -resume
+```
+
+Additionaly, if you want to run pycoQC, you need to add the `--sequencing_summary` parameter:
+
+```bash
+nextflow run main.nf \
+  --indir /path/to/nanopore/fastq/files \
+  --outdir results_nanopore \
+  --platform "nanopore" \
+  --sequencing_summary sequencing_summary.txt \
+  -profile <docker/singularity/conda> \
+  -resume
+```
 
 ## How to cite this work
 
 This work has not been publised yet.
 
-Please cite this repository as: "RSVPipeline (accessed on YYYY-MM-DD)". And do not forget to cite the paper when it becomes available.
+Please cite this repository as: "nf-rsvpipeline (accessed on YYYY-MM-DD)". And do not forget to cite the paper when it becomes available.
 
 ## Funding
 
