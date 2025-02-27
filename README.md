@@ -26,18 +26,20 @@ The **RSVPipeline** is built using [Nextflow](https://www.nextflow.io/), followi
   </picture>
 </h1>
 
-1. Quality control of raw reads with FastQC
-2. Taxonomic classification of raw reads using Kraken2 with PlusPF database
-3. Adapter trimming with fastp
-4. Quality control of trimmed reads with FastQC
-5. Remove host reads using Kraken2 with humanDB database
-6. Multi-reference alignment with bbmap to select reference
-   1. Run alternative assembly strategy if previous MSA step failed
-7. Align reads to the correct reference strain
-8. Trim adapters with iVar before create consensus sequences
-9. Coverage analysis with Mosdepth
-10. Create consensus sequence with iVar
-11. Variant-calling with iVar
+1. Quality control of raw reads ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
+2. Taxonomic classification of raw reads ([`Kraken2`](https://github.com/DerrickWood/kraken2))
+   * Use PlusPF database ([`Kraken2 databases`](https://benlangmead.github.io/aws-indexes/k2))
+3. Adapter trimming ([`fastp`](https://github.com/OpenGene/fastp))
+4. Quality control of trimmed reads ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
+5. Remove host reads ([`Kraken2`](https://github.com/DerrickWood/kraken2))
+   * Use HumanDB ([`Kraken2 databases`](https://benlangmead.github.io/aws-indexes/k2))
+6. Multi-reference alignment to select reference ([`BBMap`](https://sourceforge.net/projects/bbmap/))
+   1. Run alternative assembly strategy if previous MSA step failed ([`SPAdes`]()https://github.com/ablab/spades)
+7. Align reads to the correct reference strain ([`BWA`](https://github.com/lh3/bwa/))
+8. Trim adapters before create consensus sequences ([`iVar`](https://github.com/andersen-lab/ivar))
+9. Coverage analysis ([`MosDepth`](https://github.com/brentp/mosdepth))
+10. Create consensus sequence ([`iVar`](https://github.com/andersen-lab/ivar))
+11. Variant-calling ([`iVar`](https://github.com/andersen-lab/ivar))
 
 ## ONT pipeline summary
 
@@ -48,16 +50,18 @@ The **RSVPipeline** is built using [Nextflow](https://www.nextflow.io/), followi
   </picture>
 </h1>
 
-1. Quality control of raw reads with NanoPlot
-2. Taxonomic classification of raw reads using Kraken2 with PlusPF database
-3. Remove host reads using Kraken2 with humanDB database
-4. Quality control of dehosted reads with NanoPlot
-5. Select reference using IRMA
-6. Align reads to the correct reference strain
-7. Trim adapters with align_trim (from ARTIC) before create consensus sequences
-8. Coverage analysis with Mosdepth
-9. Create consensus sequence with Medaka
-10. Variant-calling with Medaka
+1. Quality control of raw reads ([`NanoPlot`](https://github.com/wdecoster/NanoPlot))
+2. Taxonomic classification of raw reads ([`Kraken2`](https://github.com/DerrickWood/kraken2))
+   * Use PlusPF database ([`Kraken2 databases`](https://benlangmead.github.io/aws-indexes/k2))
+3. Remove host reads ([`Kraken2`](https://github.com/DerrickWood/kraken2))
+   * Use HumanDB ([`Kraken2 databases`](https://benlangmead.github.io/aws-indexes/k2))
+4. Quality control of dehosted reads ([`NanoPlot`](https://github.com/wdecoster/NanoPlot))
+5. Select reference to downstream analysis ([`IRMA`](https://wonder.cdc.gov/amd/flu/irma/index.html))
+6. Align reads to the correct reference strain ([`Minimap2`](https://github.com/lh3/minimap2))
+7. Trim adapters before create consensus sequences ([`ARTIC`](https://github.com/artic-network/fieldbioinformatics))
+8. Coverage analysis ([`MosDepth`](https://github.com/brentp/mosdepth))
+9. Create consensus sequence ([`Medaka`](https://github.com/nanoporetech/medaka))
+10. Variant-calling ([`Medaka`](https://github.com/nanoporetech/medaka))
 
 ## Usage
 
