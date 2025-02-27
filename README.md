@@ -79,16 +79,16 @@ cd nf-rsvpipeline
 
 4. Run the pipeline:
 
-For Illumina **paired-end** datasets run the pipeline as follows:
+  For Illumina **paired-end** datasets run the pipeline as follows:
 
-```bash
-nextflow run main.nf \
-  --indir /path/to/illumina/fastq/files \
-  --outdir results_illumina \
-  --platform "illumina" \
-  -profile <docker/singularity/conda> \
-  -resume
-```
+  ```bash
+  nextflow run main.nf \
+    --indir /path/to/illumina/fastq/files \
+    --outdir results_illumina \
+    --platform "illumina" \
+    -profile <docker/singularity/conda> \
+    -resume
+  ```
 
 For ONT datasets run the pipeline as follows:
 
