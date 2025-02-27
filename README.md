@@ -17,6 +17,8 @@ A public repository of **Respiratory Syncytial Virus genomic surveillance** bioi
 
 The **nf-rsvpipeline** is built using [Nextflow](https://www.nextflow.io/), following [nf-core](https://nf-co.re) guidelines and templates.
 
+### Respiratory Syncytial Virus genomic surveillance in the Canary Islands
+
 This pipeline is designed for the analysis of RSV whole genomes using short- and long-read sequencing technologies. It is developed as part of the research efforts documented in the following repository:
 
 [`RSV Repository (genomicsITER/RSV)`](https://github.com/genomicsITER/RSV)
