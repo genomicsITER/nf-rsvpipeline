@@ -132,7 +132,84 @@ For further assistance, feel free to open an [issue](https://github.com/genomics
 
 ## Pipeline output
 
-For more details about the output files and reports, please refer to the [output documentation](docs/output.md).
+Overview of the different results produced by the pipeline and how to interpret them.
+
+<details>
+
+<summary>**Summary output of Illumina pipeline**</summary>
+
+### Preprocessing
+
+* `01_FastQC`
+  * `*_{1,2}_fastqc.html`: FastQC report containing quality metrics.
+  * `*_{1,2}_fastqc.zip`: Zip archive containing the FastQC report, tab-delimited data file and plot images.
+* `02_`
+  * `*.kraken2.classifiedreads.txt`: .
+  * `*.kraken2.report.txt`: .
+* `03_Adapter_trimming`
+  * `*`: .
+  * `*.fastp.log`: .
+  * `*.fastp.json`: .
+  * `*.fastp.html`: .
+  * `*_{1,2}.fastp.fastq.gz`: .
+* `04_FastQC_trimmed`
+  * `*_{1,2}_fastqc.html`: FastQC report containing quality metrics of trimmed resds.
+  * `*_{1,2}_fastqc.zip`: Zip archive containing the FastQC-trimmed report, tab-delimited data file and plot images.
+* `05_Remove_host_reads`
+  * `*.classified_{1,2}.fastq.gz`: .
+  * `*.unclassified_{1,2}.fastq.gz`: .
+  * `*.kraken2.classifiedreads.txt`: .
+  * `*.kraken2.report.txt`: .
+* `06_Reference_selection`
+  * `*.MSA.bam`: .
+  * `*.MSA.bbmap.log`: .
+  * `*.MSA.covstats.tsv`: .
+  * `*_refs.tsv`: .
+* `07_Align`
+  * `*.RSV-{A,B}.bam`: .
+  * `*.RSV-{A,B}.bam.bai`: .
+  * `*.RSV-{A,B}.flagstat`: .
+  * `*.RSV-{A,B}.idxstats`: .
+  * `*.RSV-{A,B}.mapped.bam`: .
+  * `*.RSV-{A,B}.mapped.bam.bai`: .
+* `08_Trim_adapters`
+  * `*.RSV-{A,B}.mapped.trimmed.bam`: .
+  * `*.RSV-{A,B}.mapped.trimmed.ivar.log`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.bam`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.bam.bai`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.flagstat`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.idxstats`: .
+* `09_Coverage_analysis`
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.all_amplicons.mosdepth.global.dist.txt`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.all_amplicons.mosdepth.region.dist.txt`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.all_amplicons.mosdepth.summary.txt`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.all_amplicons.per-base.bed.gz`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.all_amplicons.per-base.bed.gz.csi`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.all_amplicons.regions.bed.gz`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.all_amplicons.regions.bed.gz.csi`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.mosdepth.global.dist.txt`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.mosdepth.summary.txt`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.per-base.bed.gz`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.per-base.bed.gz.csi`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.tsv`: .
+* `10_Calling`
+  * `*.RSV-{A,B}.ivar_calling.mpileup`: .
+  * `*.RSV-{A,B}.ivar_calling.tsv`: .
+  * `*.RSV-{A,B}.ivar_calling.vcf`: .
+* `11_Consensus`
+  * `*.RSV-{A,B}.ivar_consensus.fa`: .
+  * `*.RSV-{A,B}.ivar_consensus.mpileup`: .
+  * `*.RSV-{A,B}.ivar_consensus.qual.txt`: .
+
+You can add text within a collapsed section.
+
+You can add an image or a code block, too.
+
+```ruby
+   puts "Hello World"
+```
+
+</details>
 
 ## How to cite this work
 
