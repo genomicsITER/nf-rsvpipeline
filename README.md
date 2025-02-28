@@ -78,7 +78,7 @@ The RSV repository contains genomic data, analysis scripts, and additional resou
 
 1. Install [`Nextflow`](https://www.nextflow.io/docs/latest/getstarted.html#installation) (`>=24.04.2`) before running the pipeline.
 
-2. Make sure to download and set up the **Kraken2 PlusPF database** from this [`repository`](https://benlangmead.github.io/aws-indexes/k2). Ensure that the database path is correctly set in the `nextflow.config` file.
+2. Make sure to download and set up the **Kraken2 PlusPF** and the **Kraken2 HumanDB** databases from this [`repository`](https://benlangmead.github.io/aws-indexes/k2). Ensure that the database path is correctly set in the `nextflow.config` file using the `kraken2_pluspf_database` and `kraken2_human_database` parameters.
 
 3. Clone the repository:
 
