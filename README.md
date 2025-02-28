@@ -130,13 +130,11 @@ The RSV repository contains genomic data, analysis scripts, and additional resou
 
 For further assistance, feel free to open an [issue](https://github.com/genomicsITER/nf-rsvpipeline/issues) in this repository.
 
-## Pipeline output
-
-Overview of the different results produced by the pipeline and how to interpret them.
+## Illumina pipeline output
 
 <details>
 
-<summary>**Summary output of Illumina pipeline**</summary>
+<summary>Overview of the different results produced by the pipeline and how to interpret them:</summary>
 
 ### Preprocessing
 
