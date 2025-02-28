@@ -142,26 +142,25 @@ For further assistance, feel free to open an [issue](https://github.com/genomics
   * `*_{1,2}_fastqc.html`: FastQC report containing quality metrics.
   * `*_{1,2}_fastqc.zip`: Zip archive containing the FastQC report, tab-delimited data file and plot images.
 * `02_Kraken2_PlusPF/`
-  * `*.kraken2.classifiedreads.txt`: .
-  * `*.kraken2.report.txt`: .
+  * `*.kraken2.classifiedreads.txt`: Reads classified as belonging to any of the taxa on the Kraken2 database.
+  * `*.kraken2.report.txt`: Kraken2 report containing stats about classified and not classified reads.
 * `03_Adapter_trimming/`
-  * `*`: .
-  * `*.fastp.log`: .
-  * `*.fastp.json`: .
-  * `*.fastp.html`: .
-  * `*_{1,2}.fastp.fastq.gz`: .
+  * `*.fastp.log`: fastp log file.
+  * `*.fastp.json`: Results in JSON format.
+  * `*.fastp.html`: Results in HTML format.
+  * `*_{1,2}.fastp.fastq.gz`: The trimmed/modified/unmerged fastq reads.
 * `04_FastQC_trimmed/`
   * `*_{1,2}_fastqc.html`: FastQC report containing quality metrics of trimmed resds.
   * `*_{1,2}_fastqc.zip`: Zip archive containing the FastQC-trimmed report, tab-delimited data file and plot images.
 * `05_Remove_host_reads/`
-  * `*.classified_{1,2}.fastq.gz`: .
-  * `*.unclassified_{1,2}.fastq.gz`: .
-  * `*.kraken2.classifiedreads.txt`: .
-  * `*.kraken2.report.txt`: .
+  * `*.classified_{1,2}.fastq.gz`: Reads classified as belonging to any of the taxa on the Kraken2 database.
+  * `*.unclassified_{1,2}.fastq.gz`: Reads not classified to any of the taxa on the Kraken2 database.
+  * `*.kraken2.classifiedreads.txt`: Kraken2 output file indicating the taxonomic assignment of each input read.
+  * `*.kraken2.report.txt`: Kraken2 report containing stats about classified and not classified reads.
 * `06_Reference_selection/`
-  * `*.MSA.bam`: .
-  * `*.MSA.bbmap.log`: .
-  * `*.MSA.covstats.tsv`: .
+  * `*.MSA.bam`: BAM file.
+  * `*.MSA.bbmap.log`: Log file.
+  * `*.MSA.covstats.tsv`: Per-scaffold coverage info.
   * `*_refs.tsv`: .
   * `*_failed_assembly.tsv`:
   * `assembly/`
@@ -226,13 +225,13 @@ For further assistance, feel free to open an [issue](https://github.com/genomics
   * `*.log`: .
   * `NanoStats.txt`: .
 * `02_Kraken2_PlusPF/`
-  * `*.kraken2.classifiedreads.txt`: .
-  * `*.kraken2.report.txt`: .
+  * `*.kraken2.classifiedreads.txt`: Reads classified as belonging to any of the taxa on the Kraken2 database.
+  * `*.kraken2.report.txt`: Kraken2 report containing stats about classified and not classified reads.
 * `03_Remove_host_reads/`
-  * `*.classified.fastq.gz`: .
-  * `*.unclassified.fastq.gz`: .
-  * `*.kraken2.classifiedreads.txt`: .
-  * `*.kraken2.report.txt`: .
+  * `*.classified.fastq.gz`: Reads classified as belonging to any of the taxa on the Kraken2 database.
+  * `*.unclassified.fastq.gz`: Reads not classified to any of the taxa on the Kraken2 database.
+  * `*.kraken2.classifiedreads.txt`: Kraken2 output file indicating the taxonomic assignment of each input read.
+  * `*.kraken2.report.txt`: Kraken2 report containing stats about classified and not classified reads.
 * `04_NanoPlot_Scrubbed/`
   * `*.html`: .
   * `*.png`: .
