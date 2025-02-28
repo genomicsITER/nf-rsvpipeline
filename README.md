@@ -42,7 +42,7 @@ The RSV repository contains genomic data, analysis scripts, and additional resou
 5. Remove host reads ([`Kraken2`](https://github.com/DerrickWood/kraken2))
    * Use HumanDB ([`Kraken2 databases`](https://benlangmead.github.io/aws-indexes/k2))
 6. Multi-reference alignment to select reference ([`BBMap`](https://sourceforge.net/projects/bbmap/))
-   1. Run alternative assembly strategy if previous MSA step failed ([`SPAdes`](https://github.com/ablab/spades)
+   1. Run alternative assembly strategy if previous MSA step failed ([`SPAdes`](https://github.com/ablab/spades))
 7. Align reads to the correct reference strain ([`BWA`](https://github.com/lh3/bwa/))
 8. Trim adapters before create consensus sequences ([`iVar`](https://github.com/andersen-lab/ivar))
 9. Coverage analysis ([`MosDepth`](https://github.com/brentp/mosdepth))
