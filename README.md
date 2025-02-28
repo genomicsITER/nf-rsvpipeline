@@ -210,13 +210,74 @@ For further assistance, feel free to open an [issue](https://github.com/genomics
   * `*.RSV-{A,B}.ivar_consensus.mpileup`: .
   * `*.RSV-{A,B}.ivar_consensus.qual.txt`: .
 
-You can add text within a collapsed section.
+</details>
 
-You can add an image or a code block, too.
+## ONT pipeline output
 
-```ruby
-   puts "Hello World"
-```
+<details>
+
+<summary>Overview of the different results produced by the pipeline and how to interpret them:</summary>
+
+### Preprocessing
+
+* `01_NanoPlot_Raw/`
+  * `*.html`: .
+  * `*.png`: .
+  * `*.log`: .
+  * `NanoStats.txt`: .
+* `02_Kraken2_PlusPF/`
+  * `*.kraken2.classifiedreads.txt`: .
+  * `*.kraken2.report.txt`: .
+* `03_Remove_host_reads/`
+  * `*.classified.fastq.gz`: .
+  * `*.unclassified.fastq.gz`: .
+  * `*.kraken2.classifiedreads.txt`: .
+  * `*.kraken2.report.txt`: .
+* `04_NanoPlot_Scrubbed/`
+  * `*.html`: .
+  * `*.png`: .
+  * `*.log`: .
+  * `NanoStats.txt`: .
+* `05_Reference_Selection/`
+  * `RSV_{A,B}*.bam`: .
+  * `RSV_{A,B}*.bam.bai`: .
+  * `RSV_{A,B}*.fasta`: .
+  * `RSV_{A,B}*.vcf`: .
+
+### Align to selected reference
+
+* `06_Align/`
+  * `*.RSV-{A,B}.bam`: .
+  * `*.RSV-{A,B}.bam.bai`: .
+  * `*.RSV-{A,B}.flagstat`: .
+  * `*.RSV-{A,B}.idxstats`: .
+  * `*.RSV-{A,B}.mapped.bam`: .
+  * `*.RSV-{A,B}.mapped.bam.bai`: .
+* `07_Trimming/`
+  * `*.RSV-{A,B}.mapped.trimmed.flagstat`: .
+  * `*.RSV-{A,B}.mapped.trimmed.idxstats`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.bam`: .
+  * `*.RSV-{A,B}.mapped.trimmed.sorted.bam.bai`: .
+* `08_Coverage_analysis/`
+  * `*.RSV-{A,B}.mapped.trimmed.all_amplicons.mosdepth.global.dist.txt`: .
+  * `*.RSV-{A,B}.mapped.trimmed.all_amplicons.mosdepth.region.dist.txt`: .
+  * `*.RSV-{A,B}.mapped.trimmed.all_amplicons.mosdepth.summary.txt`: .
+  * `*.RSV-{A,B}.mapped.trimmed.all_amplicons.per-base.bed.gz`: .
+  * `*.RSV-{A,B}.mapped.trimmed.all_amplicons.per-base.bed.gz.csi`: .
+  * `*.RSV-{A,B}.mapped.trimmed.all_amplicons.regions.bed.gz`: .
+  * `*.RSV-{A,B}.mapped.trimmed.all_amplicons.regions.bed.gz.csi`: .
+  * `*.RSV-{A,B}.mapped.trimmed.mosdepth.global.dist.txt`: .
+  * `*.RSV-{A,B}.mapped.trimmed.mosdepth.summary.txt`: .
+  * `*.RSV-{A,B}.mapped.trimmed.per-base.bed.gz`: .
+  * `*.RSV-{A,B}.mapped.trimmed.per-base.bed.gz.csi`: .
+  * `*.RSV-{A,B}.mapped.trimmed.tsv`: .
+
+### Calling and consensus
+
+* `09_Variants/`
+  * `*.RSV-{A,B}.medaka.vcf`: .
+* `10_Consensus/`
+  * `*.RSV-{A,B}.medaka.fasta`: .
 
 </details>
 
