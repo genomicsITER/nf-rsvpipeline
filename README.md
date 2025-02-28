@@ -138,46 +138,54 @@ For further assistance, feel free to open an [issue](https://github.com/genomics
 
 ### Preprocessing
 
-* `01_FastQC`
+* `01_FastQC/`
   * `*_{1,2}_fastqc.html`: FastQC report containing quality metrics.
   * `*_{1,2}_fastqc.zip`: Zip archive containing the FastQC report, tab-delimited data file and plot images.
-* `02_`
+* `02_Kraken2_PlusPF/`
   * `*.kraken2.classifiedreads.txt`: .
   * `*.kraken2.report.txt`: .
-* `03_Adapter_trimming`
+* `03_Adapter_trimming/`
   * `*`: .
   * `*.fastp.log`: .
   * `*.fastp.json`: .
   * `*.fastp.html`: .
   * `*_{1,2}.fastp.fastq.gz`: .
-* `04_FastQC_trimmed`
+* `04_FastQC_trimmed/`
   * `*_{1,2}_fastqc.html`: FastQC report containing quality metrics of trimmed resds.
   * `*_{1,2}_fastqc.zip`: Zip archive containing the FastQC-trimmed report, tab-delimited data file and plot images.
-* `05_Remove_host_reads`
+* `05_Remove_host_reads/`
   * `*.classified_{1,2}.fastq.gz`: .
   * `*.unclassified_{1,2}.fastq.gz`: .
   * `*.kraken2.classifiedreads.txt`: .
   * `*.kraken2.report.txt`: .
-* `06_Reference_selection`
+* `06_Reference_selection/`
   * `*.MSA.bam`: .
   * `*.MSA.bbmap.log`: .
   * `*.MSA.covstats.tsv`: .
   * `*_refs.tsv`: .
-* `07_Align`
+  * `*_failed_assembly.tsv`:
+  * `assembly/`
+    * `*.contigs.fa.gz`: .
+    * `*.scaffolds.fa.gz`: .
+    * `*.txt`: .
+
+### Align to selected reference
+
+* `07_Align/`
   * `*.RSV-{A,B}.bam`: .
   * `*.RSV-{A,B}.bam.bai`: .
   * `*.RSV-{A,B}.flagstat`: .
   * `*.RSV-{A,B}.idxstats`: .
   * `*.RSV-{A,B}.mapped.bam`: .
   * `*.RSV-{A,B}.mapped.bam.bai`: .
-* `08_Trim_adapters`
+* `08_Trim_adapters/`
   * `*.RSV-{A,B}.mapped.trimmed.bam`: .
   * `*.RSV-{A,B}.mapped.trimmed.ivar.log`: .
   * `*.RSV-{A,B}.mapped.trimmed.sorted.bam`: .
   * `*.RSV-{A,B}.mapped.trimmed.sorted.bam.bai`: .
   * `*.RSV-{A,B}.mapped.trimmed.sorted.flagstat`: .
   * `*.RSV-{A,B}.mapped.trimmed.sorted.idxstats`: .
-* `09_Coverage_analysis`
+* `09_Coverage_analysis/`
   * `*.RSV-{A,B}.mapped.trimmed.sorted.all_amplicons.mosdepth.global.dist.txt`: .
   * `*.RSV-{A,B}.mapped.trimmed.sorted.all_amplicons.mosdepth.region.dist.txt`: .
   * `*.RSV-{A,B}.mapped.trimmed.sorted.all_amplicons.mosdepth.summary.txt`: .
@@ -190,11 +198,14 @@ For further assistance, feel free to open an [issue](https://github.com/genomics
   * `*.RSV-{A,B}.mapped.trimmed.sorted.per-base.bed.gz`: .
   * `*.RSV-{A,B}.mapped.trimmed.sorted.per-base.bed.gz.csi`: .
   * `*.RSV-{A,B}.mapped.trimmed.sorted.tsv`: .
-* `10_Calling`
+
+### Calling and consensus
+
+* `10_Calling/`
   * `*.RSV-{A,B}.ivar_calling.mpileup`: .
   * `*.RSV-{A,B}.ivar_calling.tsv`: .
   * `*.RSV-{A,B}.ivar_calling.vcf`: .
-* `11_Consensus`
+* `11_Consensus/`
   * `*.RSV-{A,B}.ivar_consensus.fa`: .
   * `*.RSV-{A,B}.ivar_consensus.mpileup`: .
   * `*.RSV-{A,B}.ivar_consensus.qual.txt`: .
