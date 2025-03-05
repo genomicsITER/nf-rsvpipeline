@@ -138,4 +138,4 @@ Please cite this repository as: "nf-rsvpipeline (accessed on YYYY-MM-DD)". And d
 
 ## Funding
 
-...
+Cabildo Insular de Tenerife [CGIEU0000219140, CGIAC0000014697, OA17/008, OA23/043 and “Apuestas científicas del ITER para colaborar en la lucha contra la COVID-19”]; Fundación Canaria Instituto de Investigación Sanitaria de Canarias [PIFIISC21/37 and “PROGRAMA INVESTIGO 2023, en el marco del plan de Recuperación, Transformación y Resiliencia – NEXT GENERATION EU”]; Fundación DISA [OA23/074]; Instituto de Salud Carlos III [PI20/00876, CD22/00138], co-funded by the European Regional Development Fund, “A way of making Europe”; from the EU; European Health and Digital Executive Agency (HADEA, 101113109 -RELECOV 2.0).
