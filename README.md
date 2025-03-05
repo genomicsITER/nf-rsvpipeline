@@ -9,7 +9,7 @@
 
 [![Follow on X](http://img.shields.io/badge/%40LabCFlores-1DA1F2?labelColor=000000&logo=X)](https://x.com/LabCFlores)
 
-A public repository of **Respiratory Syncytial Virus genomic surveillance** bioinformatic pipeline maintained by ITER.
+A public repository of **Respiratory Syncytial Virus (RSV) genomic surveillance** bioinformatic pipeline maintained by ITER.
 
 ## Introduction
 
