@@ -155,3 +155,11 @@ Please cite this repository as: "nf-rsvpipeline (accessed on YYYY-MM-DD)". And d
 ## Funding
 
 Cabildo Insular de Tenerife [CGIEU0000219140, CGIAC0000014697 and “Apuestas científicas del ITER para colaborar en la lucha contra la COVID-19”]; by the agreements OA17/008 and OA23/043 with Instituto Tecnológico y de Energías Renovables (ITER) to strengthen scientific and technological education, training, research, development and innovation in Genomics, Epidemiological surveillance based on sequencing, Personalized Medicine and Biotechnology; Fundación Canaria Instituto de Investigación Sanitaria de Canarias [PIFIISC21/37, EMER24/06 and “PROGRAMA INVESTIGO 2023, en el marco del plan de Recuperación, Transformación y Resiliencia – NEXT GENERATION EU”]; Fundación DISA [OA23/074]; Instituto de Salud Carlos III [PI20/00876, CD22/00138, CB06/06/1088], co-funded by the European Regional Development Fund, “A way of making Europe”; from the EU; European Health and Digital Executive Agency [HADEA, 101113109 -RELECOV 2.0]; and by Cabildo Insular de Tenerife and Consejería de Educación, Gobierno de Canarias [A0000014697].
+
+## Update logs
+
+> April 03, 2025. This repository became fully public. Enjoy the reading! ;=)
+
+> February 27, 2025. Illumina and ONT pipelines (v1.0.0).
+
+> January 30, 2025. First commit.
