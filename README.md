@@ -150,7 +150,11 @@ For further assistance, feel free to open an [issue](https://github.com/genomics
 
 This work has not been publised yet.
 
-Please cite this repository as: "nf-rsvpipeline (accessed on YYYY-MM-DD)". And do not forget to cite the paper when it becomes available.
+Please cite this repository as: "nf-rsvpipeline (accessed on YYYY-MM-DD)". And do not forget to cite the paper when it becomes available. It is already available as a preprint at [medRxiv](https://www.medrxiv.org/content/10.1101/2025.04.07.25325192v1):
+
+A bench-to-data analysis workflow for respiratory syncytial virus whole-genome sequencing with short and long-read approaches
+Adrian Gomez-Del Rosario, Adrian Munoz-Barrera, Julia Alcoba-Florez, Diego Garcia-Martinez de Artola, Nora Rodriguez-Garcia,  Jose M. Lorenzo-Salazar, Rafaela Gonzalez-Montelongo,  Carlos Flores, Laura Ciuffreda
+doi: https://doi.org/10.1101/2025.04.07.25325192
 
 ## Funding
 
