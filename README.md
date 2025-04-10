@@ -156,6 +156,7 @@ Please cite this repository as: "nf-rsvpipeline (accessed on YYYY-MM-DD)". And d
 <ul>
   <li><Adrian Gomez-Del Rosario, Adrian Munoz-Barrera, Julia Alcoba-Florez, Diego Garcia-Martinez de Artola, Nora Rodriguez-Garcia,  Jose M. Lorenzo-Salazar, Rafaela Gonzalez-Montelongo,  Carlos Flores, Laura Ciuffreda. [doi:10.1101/2025.04.07.2532519](https://doi.org/10.1101/2025.04.07.25325192)</li>
   </li>
+  </Adrian>ul>
 
 ## Funding
 
