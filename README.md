@@ -154,7 +154,7 @@ Please cite this repository as: "nf-rsvpipeline (accessed on YYYY-MM-DD)". And d
 
 <i>A bench-to-data analysis workflow for respiratory syncytial virus whole-genome sequencing with short and long-read approaches</i>
 Adrian Gomez-Del Rosario, Adrian Munoz-Barrera, Julia Alcoba-Florez, Diego Garcia-Martinez de Artola, Nora Rodriguez-Garcia,  Jose M. Lorenzo-Salazar, Rafaela Gonzalez-Montelongo,  Carlos Flores, Laura Ciuffreda
-[doi:] (https://doi.org/10.1101/2025.04.07.25325192)
+[doi: ](https://doi.org/10.1101/2025.04.07.25325192)
 
 ## Funding
 
