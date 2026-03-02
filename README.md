@@ -148,7 +148,7 @@ For further assistance, feel free to open an [issue](https://github.com/genomics
 
 ## How to cite this work
 
-This work is already published as a paper at Genome Medicine:
+This work is already published as a paper at <i>Genome Medicine</i>:
 
 A bench-to-data analysis workflow for respiratory syncytial virus whole-genome sequencing with short and long-read approaches. Adrián Gomez-Del Rosario, Adrián Muñoz-Barrera, Julia Alcoba-Florez, Diego García-Martínez de Artola, Nora Rodríguez-García, Jose M. Lorenzo-Salazar, Rafaela González-Montelongo, Carlos Flores, Laura Ciuffreda. Genome Med 18, 9 (2026). doi: <a href="https://doi.org/10.1186/s13073-025-01597-4">https://doi.org/10.1186/s13073-025-01597-4</a>.
 
