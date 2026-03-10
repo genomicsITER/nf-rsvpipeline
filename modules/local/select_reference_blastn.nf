@@ -27,6 +27,8 @@ process SELECT_REFERENCE_BLASTN {
         selected_ref=\$( echo "RSV-A" )
     elif [[ \${selected_reference} == *"Human respiratory syncytial virus B"* ]]; then
         selected_ref=\$( echo "RSV-B" )
+    elif [[ \${selected_reference} == *"Respiratory syncytial virus isolate HRSV/Human/B"* ]]; then
+        selected_ref=\$( echo "RSV-B" )
     else
         selected_ref=\$( echo "ERROR" )
     fi
