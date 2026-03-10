@@ -105,7 +105,7 @@ The RSV repository contains genomic data, analysis scripts, and additional resou
 
 4. Input Data Requirements: To run the pipeline, the user must provide sequencing data in the following format:
 
-   * **For Illumina data**: A folder containing paired-end FASTQ files (`_R1.fastq.gz` and `_R2.fastq.gz` for each sample).
+   * **For Illumina data**: A folder containing paired-end FASTQ files (`_R1_001.fastq.gz` and `_R2_001.fastq.gz` for each sample).
    * **For ONT data**: A folder containing single-end FASTQ files (`.fastq.gz`).
 
 5. Run the pipeline:
