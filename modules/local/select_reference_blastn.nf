@@ -1,6 +1,6 @@
 process SELECT_REFERENCE_BLASTN {
     tag "$meta.id"
-    label 'process_low'
+    label 'process_medium'
 
     conda "conda-forge::python=3.12"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
