@@ -1,6 +1,6 @@
 process SELECT_REFERENCE_BLASTN {
     tag "$meta.id"
-    label 'process_medium'
+    label 'process_single'
 
     conda "conda-forge::python=3.12"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
@@ -21,7 +21,7 @@ process SELECT_REFERENCE_BLASTN {
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
     # Parse BLASTn results:
-    selected_reference=\$( sort -t\$'\\t' -k3 -k4 -nr $blastn_txt | head -1 )
+    selected_reference=\$( sort -t\$'\\t' -k3 -k4 -nr $blastn_txt | head -1 || true )
 
     if [[ \${selected_reference} == *"Human respiratory syncytial virus A"* ]]; then
         selected_ref=\$( echo "RSV-A" )
